@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel | BiSN AI</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f1f5fa;color:#142746}
+header{background:#101d35;color:white;padding:19px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:bold}
+.logo span{color:#50b9ff}
+header a{color:white;text-decoration:none;font-size:13px}
+main{max-width:950px;margin:auto;padding:25px 16px}
+.welcome{background:linear-gradient(120deg,#101d35,#20578d);padding:27px 20px;border-radius:15px;color:white;margin-bottom:22px}
+.welcome h1{font-size:25px;margin-bottom:10px}
+.welcome p{color:#d5e7f9;line-height:1.6;font-size:14px}
+.tag{display:inline-block;background:#284b70;padding:8px 12px;border-radius:20px;font-size:12px;margin-top:17px}
+h2{font-size:21px;margin-bottom:8px}
+.desc{color:#68788e;font-size:14px;margin-bottom:20px}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.card{background:white;border:1px solid #e0e8f1;border-radius:13px;padding:19px;box-shadow:0 3px 12px #14274608}
+.emoji{font-size:29px;margin-bottom:12px}
+.card h3{font-size:16px;margin-bottom:8px}
+.card p{font-size:13px;color:#718096;line-height:1.5}
+button{background:#167bc1;color:white;border:0;padding:11px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:15px;width:100%}
+.history{background:white;padding:20px;border-radius:13px;margin-top:25px;border:1px solid #e0e8f1}
+textarea{width:100%;padding:13px;border:1px solid #ccd8e6;border-radius:9px;resize:vertical;min-height:100px;font-family:Arial;font-size:14px;margin-top:12px}
+footer{text-align:center;padding:25px;color:#75849a;font-size:12px}
+#workspace{display:none;background:white;border-radius:13px;padding:20px;margin-top:22px;border:1px solid #dce5ef}
+#result{white-space:pre-wrap;line-height:1.6;margin-top:15px}
+@media(min-width:650px){.tools{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">BiSN <span>AI</span></div>
+ <a href="index.html">Página inicial ↗</a>
+</header>
+
+<main>
+ <div class="welcome">
+  <h1>Bem-vindo à BiSN AI!</h1>
+  <p>O teu espaço de criação digital está aqui.
+  Escolhe uma ferramenta e começa a transformar as tuas ideias.</p>
+  <div class="tag">Painel de demonstração V1.0</div>
+ </div>
+
+ <h2>As tuas ferramentas</h2>
+ <p class="desc">Escolhe o que pretendes criar.</p>
+
+ <div class="tools">
+  <div class="card">
+   <div class="emoji">🎬</div>
+   <h3>Gerador de vídeos</h3>
+   <p>Prepara ideias para os teus próximos vídeos.</p>
+   <button onclick="openTool('Vídeos')">Abrir ferramenta</button>
+  </div>
+
+  <div class="card">
+   <div class="emoji">🎨</div>
+   <h3>Gerador de imagens</h3>
+   <p>Desenvolve conceitos para imagens criativas.</p>
+   <button onclick="openTool('Imagens')">Abrir ferramenta</button>
+  </div>
+
+  <div class="card">
+   <div class="emoji">📖</div>
+   <h3>Histórias infantis</h3>
+   <p>Cria ideias para histórias e animações infantis.</p>
+   <button onclick="openTool('Histórias infantis')">Abrir ferramenta</button>
+  </div>
+
+  <div class="card">
+   <div class="emoji">✍️</div>
+   <h3>Assistente de textos</h3>
+   <p>Prepara textos, anúncios e publicações.</p>
+   <button onclick="openTool('Textos')">Abrir ferramenta</button>
+  </div>
+
+  <div class="card">
+   <div class="emoji">🤖</div>
+   <h3>Assistente IA</h3>
+   <p>Organiza perguntas e ideias para o teu assistente.</p>
+   <button onclick="openTool('Assistente IA')">Abrir ferramenta</button>
+  </div>
+
+  <div class="card">
+   <div class="emoji">📱</div>
+   <h3>Redes sociais</h3>
+   <p>Planeia conteúdos para as tuas redes sociais.</p>
+   <button onclick="openTool('Redes sociais')">Abrir ferramenta</button>
+  </div>
+ </div>
+
+ <div id="workspace">
+  <h2 id="toolTitle">Ferramenta</h2>
+  <p class="desc">Descreve aquilo que pretendes criar.</p>
+  <textarea id="prompt" placeholder="Escreve aqui a tua ideia..."></textarea>
+  <button onclick="prepareIdea()">Preparar minha ideia</button>
+  <div id="result"></div>
+ </div>
+
+ <div class="history">
+  <h2>📂 Histórico de criações</h2>
+  <p class="desc">As tuas criações aparecerão aqui quando implementarmos o armazenamento.</p>
+ </div>
+</main>
+
+<footer>
+ <div class="logo">BiSN <span>AI</span></div>
+ A inteligência artificial ao alcance de todos.<br>
+ © 2026 BiSN AI
+</footer>
+
+<script>
+let selectedTool="";
+
+function openTool(tool){
+ selectedTool=tool;
+ document.getElementById("toolTitle").textContent=tool;
+ document.getElementById("workspace").style.display="block";
+ document.getElementById("result").textContent="";
+ document.getElementById("prompt").value="";
+ document.getElementById("workspace").scrollIntoView({behavior:"smooth"});
+}
+
+function prepareIdea(){
+ let idea=document.getElementById("prompt").value.trim();
+ if(!idea){
+  alert("Escreve primeiro a tua ideia.");
+  return;
+ }
+ document.getElementById("result").textContent=
+ "Ideia registada nesta demonstração!\\n\\nFerramenta: "+selectedTool+
+ "\\nA tua descrição: "+idea+
+ "\\n\\nA ligação à inteligência artificial será implementada na próxima fase.";
+}
+</script>
+</body>
+</html>
