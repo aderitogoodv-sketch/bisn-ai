@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101d35">
+<title>BiSN AI - Inteligência Artificial</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fc;
+  color: #142746;
+}
+
+header {
+  background: #101d35;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo span {
+  color: #50b9ff;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero {
+  background: linear-gradient(135deg,#101d35,#174879);
+  color: white;
+  padding: 65px 22px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 35px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #d7e8fa;
+  max-width: 500px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  background: #39a9f5;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section {
+  padding: 38px 18px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #66758b;
+  margin-bottom: 27px;
+  line-height: 1.5;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.tool {
+  background: white;
+  border-radius: 13px;
+  padding: 20px 13px;
+  box-shadow: 0 3px 15px #14274612;
+  border: 1px solid #e4eaf3;
+}
+
+.tool .emoji {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.tool h3 {
+  font-size: 16px;
+  margin-bottom: 9px;
+}
+
+.tool p {
+  color: #69778a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tool button {
+  margin-top: 15px;
+  background: #e8f4ff;
+  color: #1265a6;
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.about {
+  background: white;
+  text-align: center;
+}
+
+.about p {
+  max-width: 550px;
+  margin: 15px auto;
+  line-height: 1.8;
+  color: #637187;
+}
+
+footer {
+  background: #101d35;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer span {
+  color: #50b9ff;
+}
+
+@media(max-width: 360px) {
+  .hero h1 { font-size: 29px; }
+  .tools { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">BiSN <span>AI</span></div>
+  <a href="#ferramentas">Explorar ferramentas</a>
+</header>
+
+<div class="hero">
+  <h1>A inteligência artificial ao alcance de todos.</h1>
+  <p>
+    Descubra novas possibilidades, crie conteúdos
+    digitais e transforme as suas ideias com a
+    inteligência artificial.
+  </p>
+  <a href="#ferramentas">
+    <button class="btn">Começar agora →</button>
+  </a>
+</div>
+
+<section id="ferramentas">
+  <h2 class="section-title">Explore a BiSN AI</h2>
+  <p class="subtitle">
+    Ferramentas inteligentes para dar vida às suas ideias.
+  </p>
+
+  <div class="tools">
+
+    <div class="tool">
+      <div class="emoji">🎬</div>
+      <h3>Texto para vídeo</h3>
+      <p>Transforme as suas ideias em vídeos criativos.</p>
+      <button onclick="emBreve()">Experimentar</button>
+    </div>
+
+    <div class="tool">
+      <div class="emoji">🎨</div>
+      <h3>Gerador de imagens</h3>
+      <p>Crie imagens originais com inteligência artificial.</p>
+      <button onclick="emBreve()">Experimentar</button>
+    </div>
+
+    <div class="tool">
+      <div class="emoji">📖</div>
+      <h3>Histórias infantis</h3>
+      <p>Crie histórias divertidas para crianças.</p>
+      <button onclick="emBreve()">Experimentar</button>
+    </div>
+
+    <div class="tool">
+      <div class="emoji">✍️</div>
+      <h3>Assistente de textos</h3>
+      <p>Escreva textos, ideias e publicações.</p>
+      <button onclick="emBreve()">Experimentar</button>
+    </div>
+
+    <div class="tool">
+      <div class="emoji">🤖</div>
+      <h3>Assistente IA</h3>
+      <p>Converse e encontre respostas inteligentes.</p>
+      <button onclick="emBreve()">Experimentar</button>
+    </div>
+
+    <div class="tool">
+      <div class="emoji">📱</div>
+      <h3>Redes sociais</h3>
+      <p>Prepare conteúdos para as suas redes sociais.</p>
+      <button onclick="emBreve()">Experimentar</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+  <h2>Bem-vindo à BiSN AI</h2>
+  <p>
+    A nossa missão é tornar a inteligência artificial
+    mais acessível, simples e útil para todos.
+    Estamos a construir um espaço onde as ideias
+    podem transformar-se em possibilidades.
+  </p>
+</section>
+
+<footer>
+  <div class="logo">BiSN <span>AI</span></div>
+  <p>A inteligência artificial ao alcance de todos.</p>
+  <p>© 2026 BiSN AI. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function emBreve() {
+  alert("Esta ferramenta estará disponível brevemente na BiSN AI!");
+}
+</script>
+
+</body>
+</html>
